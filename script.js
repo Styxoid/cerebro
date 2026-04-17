@@ -422,3 +422,29 @@ setInterval(() => {
     document.getElementById('statBattery').textContent = '87%';
     document.getElementById('statLatency').textContent = (10 + Math.floor(Math.random() * 6)) + 'ms';
 }, 2000);
+
+async function toggleSystemMode(mode) {
+    try {
+        const response = await fetch('http://127.0.0.1:5000/set_mode', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ mode: mode })
+        });
+        
+        // Update Button Visuals
+        const simBtn = document.getElementById('modeSim');
+        const hwBtn = document.getElementById('modeHw');
+        
+        if (mode === 1) { // Hardware Mode
+            hwBtn.style.background = "#00f2ff"; hwBtn.style.color = "#000";
+            simBtn.style.background = "#1a1a1a"; simBtn.style.color = "#00f2ff";
+        } else { // Simulation Mode
+            simBtn.style.background = "#00f2ff"; simBtn.style.color = "#000";
+            hwBtn.style.background = "#1a1a1a"; hwBtn.style.color = "#00f2ff";
+        }
+        
+        console.log("System source switched.");
+    } catch (e) {
+        console.error("Mode switch failed:", e);
+    }
+}

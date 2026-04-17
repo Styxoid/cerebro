@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "esptestprgm",
+			"path": "../../文档/PlatformIO/Projects/esptestprgm"
+		}
+	],
+	"settings": {}
+}

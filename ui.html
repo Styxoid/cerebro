@@ -63,7 +63,11 @@
         <div class="control-panel">
             <div class="panel-label">CONTROL INTERFACE</div>
             <div class="btn-group">
-
+                <div class="mode-control" style="margin-bottom: 30px;">
+                    <h3 style="color: #00f2ff; font-family: 'Orbitron'; font-size: 12px; margin-bottom: 10px;">SYSTEM INPUT SOURCE</h3>
+                    <button id="modeSim" onclick="toggleSystemMode(0)" style="background: #00f2ff; color: #000; border: none; padding: 10px 20px; cursor: pointer; font-family: 'Rajdhani'; font-weight: bold;">SIMULATION</button>
+                    <button id="modeHw" onclick="toggleSystemMode(1)" style="background: #1a1a1a; color: #00f2ff; border: 1px solid #00f2ff; padding: 10px 20px; cursor: pointer; font-family: 'Rajdhani'; font-weight: bold;">HARDWARE (ESP32)</button>
+                </div>
                 <!-- START Button -->
                 <button id="btnStart" class="ctrl-btn btn-start" onclick="openStartWindow()">
                     <div class="btn-glow"></div>
@@ -350,7 +354,7 @@
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
