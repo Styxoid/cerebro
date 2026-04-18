@@ -43,19 +43,19 @@
                     <circle cx="64" cy="14" r="2.5" fill="#7c3aed" opacity="0.9" class="pulse-dot" />
                 </svg>
             </div>
-            <h1 class="title-main">CEREBRO</h1>
-            <p class="title-sub">EEG NEURAL HEADSET CONTROL SYSTEM</p>
+            <h1 class="title-main">MUSCLEX</h1>
+            <p class="title-sub">EMG MUSCLE CONTROL SYSTEM</p>
             <div class="status-badge">
                 <span class="status-dot"></span>
-                HEADSET CONNECTED
+                EMG CONNECTED
             </div>
         </div>
 
         <!-- EEG Wave Visualization -->
         <div class="wave-container">
-            <svg class="eeg-wave" viewBox="0 0 600 80" preserveAspectRatio="none">
-                <polyline id="eegLine" points="" fill="none" stroke="#00f7ff" stroke-width="2" />
-                <polyline id="eegLine2" points="" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity="0.5" />
+            <svg class="emg-wave" viewBox="0 0 600 80" preserveAspectRatio="none">
+                <polyline id="emgLine" points="" fill="none" stroke="#00f7ff" stroke-width="2" />
+                <polyline id="emgLine2" points="" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity="0.5" />
             </svg>
         </div>
 
@@ -79,7 +79,7 @@
                         </div>
                         <div class="btn-text">
                             <span class="btn-label">START</span>
-                            <span class="btn-desc">Launch Neural Control</span>
+                            <span class="btn-desc">Launch Muscle Control</span>
                         </div>
                     </div>
                     <div class="btn-corner tl"></div>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="btn-text">
                             <span class="btn-label">CALIBRATE</span>
-                            <span class="btn-desc">Configure Headset</span>
+                            <span class="btn-desc">Configure Movements</span>
                         </div>
                     </div>
                     <div class="btn-corner tl"></div>
@@ -158,17 +158,17 @@
             <div id="calibStartScreen">
                 <div class="calib-intro">
                     <div class="calib-intro-icon">🧠</div>
-                    <h2 class="calib-intro-title">NEURAL CALIBRATION</h2>
+                    <h2 class="calib-intro-title">MUSCLE CALIBRATION</h2>
                     <p class="calib-intro-desc">
-                        This process will map your neural patterns for 4 directional commands.<br />
+                        This process will map your muscle contraction patterns for 4 directional commands.<br />
                         Each step lasts <strong>10 seconds</strong>. Stay focused and relaxed.
                     </p>
                     <div class="calib-steps-preview">
-                        <div class="step-preview" id="sp1"><span class="sp-icon">➡️</span><span>Think RIGHT</span></div>
-                        <div class="step-preview" id="sp2"><span class="sp-icon">⬅️</span><span>Think LEFT</span></div>
-                        <div class="step-preview" id="sp3"><span class="sp-icon">⬆️</span><span>Think FORWARD</span>
+                        <div class="step-preview" id="sp1"><span class="sp-icon">➡️</span><span>CONTRACT RIGHT MUSCLE</span></div>
+                        <div class="step-preview" id="sp2"><span class="sp-icon">⬅️</span><span>CONTRACT LEFT MUSCLE</span></div>
+                        <div class="step-preview" id="sp3"><span class="sp-icon">⬆️</span><span>CONTRACT BOTH HAND MUSCLE</span>
                         </div>
-                        <div class="step-preview" id="sp4"><span class="sp-icon">🛑</span><span>Think STOP</span></div>
+                        <div class="step-preview" id="sp4"><span class="sp-icon">🛑</span><span>STOP CONTRACTION</span></div>
                     </div>
                     <button class="action-btn" id="btnStartCalib" onclick="startCalibration()">
                         <span>START CALIBRATION</span>
@@ -186,7 +186,7 @@
                 <div id="countdownOverlay" class="hidden countdown-overlay">
                     <div class="countdown-content">
                         <div class="countdown-get-ready">GET READY TO</div>
-                        <div class="countdown-action" id="countdownAction">THINK RIGHT</div>
+                        <div class="countdown-action" id="countdownAction">CONTRACT RIGHT MUSCLE</div>
                         <div class="countdown-number" id="countdownNumber">3</div>
                         <div class="countdown-ring">
                             <svg viewBox="0 0 100 100" class="countdown-svg">
@@ -222,7 +222,7 @@
                 <!-- Current step progress bar -->
                 <div class="progress-section mt-sm">
                     <div class="progress-label">
-                        <span id="stepLabel">STEP 1 — THINK RIGHT</span>
+                        <span id="stepLabel">STEP 1 — CONTRACT RIGHT MUSCLE</span>
                         <span id="stepTime">10s</span>
                     </div>
                     <div class="progress-track step-track">
@@ -239,26 +239,26 @@
                     <div class="brain-center">
                         <span id="brainEmoji" class="brain-emoji">➡️</span>
                     </div>
-                    <div class="brain-pulse-text" id="brainPulseText">THINK RIGHT</div>
+                    <div class="brain-pulse-text" id="brainPulseText">CONTRACT RIGHT MUSCLE</div>
                 </div>
 
                 <!-- Steps checklist -->
                 <div class="steps-checklist">
                     <div class="step-check" id="sc1">
                         <div class="sc-icon pending" id="sci1">1</div>
-                        <span id="scl1">Think RIGHT</span>
+                        <span id="scl1">CONTRACT RIGHT MUSCLE</span>
                     </div>
                     <div class="step-check" id="sc2">
                         <div class="sc-icon pending" id="sci2">2</div>
-                        <span id="scl2">Think LEFT</span>
+                        <span id="scl2">CONTRACT LEFT MUSCLE </span>
                     </div>
                     <div class="step-check" id="sc3">
                         <div class="sc-icon pending" id="sci3">3</div>
-                        <span id="scl3">Think FORWARD</span>
+                        <span id="scl3">CONTRACT BOTH MUSCLE</span>
                     </div>
                     <div class="step-check" id="sc4">
                         <div class="sc-icon pending" id="sci4">4</div>
-                        <span id="scl4">Think STOP</span>
+                        <span id="scl4"> STOP CONTRACTION</span>
                     </div>
                 </div>
 
@@ -269,9 +269,9 @@
                 <div class="calib-done-box">
                     <div class="done-icon">✅</div>
                     <h2 class="done-title">CALIBRATION COMPLETE</h2>
-                    <p class="done-desc">All 4 neural patterns have been successfully mapped to directional commands.
-                        Your headset
-                        is now ready for neural control.</p>
+                    <p class="done-desc">All 4 muscle contraction patterns have been successfully mapped to directional commands.
+                        Your EMG 
+                        is now ready for muscle control.</p>
                     <button class="action-btn" onclick="onCalibDone()">
                         <span>OK — PROCEED TO CONTROL</span>
                     </button>
@@ -289,7 +289,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
                         <polygon points="5,3 19,12 5,21" fill="currentColor" />
                     </svg>
-                    NEURAL DIRECTION FEED
+                    MUSCLE DIRECTION FEED
                 </div>
                 <button class="win-close" onclick="closeDirection()">✕</button>
             </div>
@@ -321,7 +321,7 @@
             <!-- Command text -->
             <div class="command-display">
                 <div class="cmd-phrase" id="cmdPhrase">MOVING RIGHT</div>
-                <div class="cmd-sub" id="cmdSub">Neural signal acquired · Executing command</div>
+                <div class="cmd-sub" id="cmdSub">Muscle contraction acquired · Executing command</div>
             </div>
 
             <!-- Direction indicators -->
